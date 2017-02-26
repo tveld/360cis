@@ -1,0 +1,2 @@
+sqlplus veldhuit@orcl
+hibernate23
