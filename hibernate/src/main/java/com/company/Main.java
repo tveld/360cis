@@ -1,5 +1,5 @@
 package com.company;
-
+import org.hibernate.Session;
 
 
 public class Main {

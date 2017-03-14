@@ -12,16 +12,16 @@ import java.sql.Statement;
 public class DBaccess {
     MysqlDataSource dataSource;
 
-    public static boolean DBaccess(){
+    public static String DBaccess(){
         try {
             MysqlDataSource dataSource = new MysqlDataSource();
             dataSource.setUser("veldhuit@orcl");
             dataSource.setPassword("hibernate23");
-            dataSource.setServerName("dbserv.cis.gvsu.edu");
+            dataSource.setServerName("cis.gvsu.edu:");
 
             Connection conn = dataSource.getConnection();
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SHOW TABLES");
+            ResultSet rs = stmt.executeQuery("select * from cars;");
             System.out.println(rs);
 
             rs.close();
@@ -29,8 +29,8 @@ public class DBaccess {
             conn.close();
         }
         catch (Exception ex) {
-            return false;
+            return ex.toString();
         }
-        return true;
+        return "happy face";
     }
 }
